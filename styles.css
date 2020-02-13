@@ -1,1 +1,43 @@
-img
+header{
+    max-width: 1200px;
+    margin:50px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* box-shadow: 0 2px 5px white; */
+    border-radius: 44px;
+}
+nav{
+    float: right;
+    font-family: 'Jim Nightshade', cursive;
+    font-size: 40px;
+    display: fixed;
+    border-radius: 44px;
+
+}
+.clearfix{
+    clear: both;
+}
+nav ul{
+    margin:0;
+    padding: 0;
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    display: block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    /* color: white; */
+    text-decoration: none;
+}
+nav ul li a.active,nav ul li a:hover{
+    /* background-color: blue; */
+    /* color: hotpink; */
+    transition: 0.5s;
+}
+.jumbotron{
+    border-radius: 13px;
+}
