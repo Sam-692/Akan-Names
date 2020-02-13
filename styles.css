@@ -4,7 +4,7 @@ header{
     padding: 10px;
     box-sizing: border-box;
     border-radius: 4px;
-    /* box-shadow: 0 2px 5px white; */
+    box-shadow: 0 2px 5px yellow;
     border-radius: 44px;
 }
 nav{
@@ -30,14 +30,52 @@ nav ul li a{
     display: block;
     padding: 10px 20px;
     margin: 10px 0;
-    /* color: white; */
     text-decoration: none;
 }
 nav ul li a.active,nav ul li a:hover{
-    /* background-color: blue; */
-    /* color: hotpink; */
     transition: 0.5s;
 }
 .jumbotron{
     border-radius: 13px;
 }
+* {
+    box-sizing: border-box;
+  }
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
