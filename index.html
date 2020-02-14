@@ -8,6 +8,7 @@
     <link rel="stylesheet" text="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Fondamento|Modak|Sriracha&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="js/function.js"></script>
 </head>
 <body class="font">
     <div class="container">
@@ -42,14 +43,14 @@
       <form>
         <div class="time">
         Date :<br>
-        <input type="number" name="date of birth" placeholder="DD"><br>
+        <input id="date" type="number" name="date of birth" placeholder="DD"><br>
         Month:<br>
-         <input type="number" name="month" placeholder="MM"><br>
+         <input id="month" type="number" name="month" placeholder="MM"><br>
         Year:<br>
-        <input type="number" name="year" placeholder="YY"><br>
-        Century:<br>
+        <input id="year" type="number" name="year" placeholder="YY"><br>
+        <!-- Century:<br>
         <input type="number" name="century" placeholder="CC"><br>
-        </div>
+        </div> -->
         <h3>Gender</h3><br>
         <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label><br>
