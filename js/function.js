@@ -1,6 +1,7 @@
 var maleNames = ["Kwasi", "Kwandwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 var femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 var dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday"];
+
 function confirmDayofWeek(){
     var date=parseInt(document.getElementById("date").value);
     var month=parseInt(document.getElementById("month").value);
@@ -32,6 +33,9 @@ function confirmDayofWeek(){
         femalename = femaleNames[whenBorn];
     alert("You were born on "+dayOfWeek[whenBorn]+ " and your Akan name is "+femalename);
     }
+    else if (Math.ceil(result) == 0 && gender === 'female') {
+    document.getElementById("outcome").innerHTML = 
+    ("Born on Sunday,your akan name is " + girl[0]);
 }
 function getGender(){
     var gender = document.getElementsById("gender");
@@ -39,4 +43,8 @@ function getGender(){
         if(gender[i].checked){
             return(gender[i].value);
         }
+    if(female.checked==true){
+    alert("You were born on "+dayOfWeek[whenBorn]+ " and your Akan name is "+femaleNames[whenBorn])
     }
+};
+

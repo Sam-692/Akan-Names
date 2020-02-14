@@ -8,7 +8,6 @@
     <link rel="stylesheet" text="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Fondamento|Modak|Sriracha&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="js/function.js"></script>
 </head>
 <body class="font">
     <div class="container">
@@ -40,24 +39,44 @@
     <div id="akan">
       <p class="want"> Want to know your Akan name</p>
       <img src="https://bit.ly/2w6mitA">
-      <form>
+      <div class="active">
+        <h4>CURIOUS!</h4>
+         <h3>Enter Details</h3>
+         <form name="my-day" onsubmit="return validate()">
+           <p><em>Day</em></p>
+           <input type="text" id="day-to-earth" name="DD" value="" class="day" placeholder="Date of Birth" min="0" max="31"> 
+           <p><em>Month</em></p>
+           <input type="text" id="month-to-earth" name="MM" value="" class="month" placeholder="Month of Birth" min="0" max="12">
+           <p><em>Year</em></p>
+           <input type="text" id="year" name="YY" value="" class="year" placeholder="Year of Birth"> 
+           <p><em>Century</em></p>
+           <input type="text" id="century" name="CC" value="" class="century" placeholder="Century of Birth">  
+           <input type="radio" name="gender" value="male"> Male 
+           <input type="radio" name="gender" value="female"> Female 
+           
+           <input type="submit" name="submit" class="action"  value="submit">
+           <input type="reset" name="reset" class="action"  value="reset">
+         </form>
+     </div>
+     
+      <!-- <form>
         <div class="time">
         Date :<br>
         <input id="date" type="number" name="date of birth" placeholder="DD"><br>
         Month:<br>
          <input id="month" type="number" name="month" placeholder="MM"><br>
         Year:<br>
-        <input id="year" type="number" name="year" placeholder="YY"><br>
+        <input id="year" type="number" name="year" placeholder="YY"><br> -->
         <!-- Century:<br>
         <input type="number" name="century" placeholder="CC"><br>
         </div> -->
-        <h3>Gender</h3><br>
-        <input type="radio" id="gender" name="gender" value="male">
+        <!-- <h3>Gender</h3><br>
+        <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label><br>
-        <input type="radio" id="gender" name="gender" value="female">
+        <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label><br>
-      <button type="submit" class="btn btn-primary" onclick="confirmDayofWeek()">Submit</button>
-     </form>
+      <button type="submit" class="btn btn-primary" onclick="getName()">Submit</button>
+     </form>                      -->
     </div>
 
      <div id="contacts" class="container">
@@ -91,5 +110,6 @@
           </div>
         </div>
       </div>
+      <script src="js/function.js"></script>
 </body>
 </html>
