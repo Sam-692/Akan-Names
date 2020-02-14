@@ -1,50 +1,108 @@
-var maleNames = ["Kwasi", "Kwandwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-var femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
-var dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday"];
-
-function confirmDayofWeek(){
-    var date=parseInt(document.getElementById("date").value);
-    var month=parseInt(document.getElementById("month").value);
-    var year=parseInt(document.getElementById("year").value);
-    var gender=getGender();
-    var day= new day(year +"/" + month +"/" + date);
-    var whenBorn= day.getDate();
-    var maleName;
-    var femalename;
-    var validate = (year > 0 && (month >0 && month <=12) && (date > 0 && date <= 31));
-    // var validateSex = (gender !== "male" || gender !== "female");
-    if (year <= 0 ) {
-        alert("No such a year");
-    }
-    else if (month <= 0 || month > 12) {
-        alert("Month should be between 1 and 12");
-    }    
-    else if (day <= 0 || day > 31){
-        alert("Date should be between 1 and 31");
-    }
-    else if (validate == false) {
-        alert("Invalid Input!!");
-    }
-    if(gender ==="male" && year > 0 && month > 0 || month < 13 && date > 0 || date < 32){
-        maleName = maleNames[whenBorn];
-    alert("You were born on "+dayOfWeek[whenBorn]+ " and your Akan name is "+maleName);
-    }
-    else if (gender === "female" && year > 0 && month > 0 || month < 13 && date > 0 || date < 32){
-        femalename = femaleNames[whenBorn];
-    alert("You were born on "+dayOfWeek[whenBorn]+ " and your Akan name is "+femalename);
-    }
-    else if (Math.ceil(result) == 0 && gender === 'female') {
-    document.getElementById("outcome").innerHTML = 
-    ("Born on Sunday,your akan name is " + girl[0]);
-}
-function getGender(){
-    var gender = document.getElementsById("gender");
-    for(i = 0; i < gender.length; i++)
-        if(gender[i].checked){
-            return(gender[i].value);
+function validate(){
+    var day = Number(document.getElementById("day-to-earth").value);
+    var month = Number(document.getElementById("month-to-earth").value);
+    var year = Number(document.getElementById("year").value);
+    var century = Number(document.getElementById("century").value);
+    var genderSelected = document.getElementsByName("gender");
+    function genderPicked() {
+        for (var gender of genderSelected) {
+            if (gender.checked){
+                return gender.value;
+            }
         }
-    if(female.checked==true){
-    alert("You were born on "+dayOfWeek[whenBorn]+ " and your Akan name is "+femaleNames[whenBorn])
     }
-};
+    var genderValue = genderPicked();
+    function dayValid () {
+        if (day < 0 || day > 31) {
+            alert("Invalid day")
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function monthValid () {
+        if (month < 0 || month > 12) {
+            alert ("Invalid month");
+            return false;
+        } else {
+            return true;
+        }
+    }
+  
+    var isDayValid = dayValid();
+    var isMonthValid = monthValid();
 
+    var dayIndex = Math.round(( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day) % 7);
+ var akanName;
+    if (genderValue === "male") {
+        switch(dayIndex) {
+                case 0:
+            akanName = "Kwasi";
+            alert("Hey, Your Akan name is Kwasi since you were born on Sunday.");
+            break;
+            case 1:
+            akanName = "Kwadwo";
+            alert("Hey, Your Akan name is Kwadwo since you were born on Monday.");
+            break;
+            case 2:
+            akanName = "Kwabena";
+            alert("Hey, Your Akan name is Kwabena since you were born on Tuesday.");
+            break;
+            case 3:
+            akanName = "Kwaku";
+            alert("Hey, Your Akan name is Kwaku since you were born on Wednesday.");
+            break;
+            case 4:
+            akanName = "Yaw";
+            alert("Hey, Your Akan name is Yaw since you were born on Thursday.");
+            break;
+            case 5:
+            akanName = "Kofi";
+            alert("Hey, Your Akan name is Kofi since you were born on Friday.");
+            break;
+            case 6:
+            akanName = "Kwame";
+            alert("Hey, Your Akan name is Kwame since you were born on Saturday.");
+            break;
+            default:
+            akanName = "Please input the correct details!"
+            alert("Please input the correct details!");
+        }
+    } else if (genderValue = "female") {
+        switch(dayIndex) {
+                case 0:
+                akanName = "Akosua";
+                alert("Hey, Your Akan name is Akosua since you were born on Sunday.");
+                break;
+                case 1:
+                akanName = "Adwoa";
+                alert("Hey, Your Akan name is Adwoa since you were born on Monday.");
+                break;
+                case 2:
+                akanName = "Abenaa";
+                alert("Hey, Your Akan name is Abenaa since you were born on Tuesday.");
+                break;
+                case 3:
+                akanName = "Akua";
+                alert("Hey, Your Akan name is Akua since you were born on Wednesday.");
+                break;
+                case 4:
+                akanName = "Yaa";
+                alert("Hey, Your Akan name is Yaa since you were born on Thursday.");
+                break;
+                case 5:
+                akanName = "Afua";
+                alert("Hey, Your Akan name is Afua since you were born on Friday.");
+                break;
+                case 6:
+                akanName = "Ama";
+                alert("Hey, Your Akan name is Ama since you were born on Saturday.");
+                break;
+                default:
+                akanName = "Please input the correct details!"
+                alert("Please input the correct details!");
+            }
+    } else {
+                alert("Please try again with the correct data.");
+    }
+}
