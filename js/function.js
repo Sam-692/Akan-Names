@@ -106,3 +106,10 @@ function validate(){
                 alert("Please try again with the correct data.");
     }
 }
+
+
+// var submit="Thank you for your feedback";
+// function myfunction (){
+//     return(submit);
+// };
+// alert(myfunction ());
